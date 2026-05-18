@@ -6,6 +6,7 @@ import Details from "./pages/Details";
 import Login from "./pages/Login";
 import MyBookings from "./pages/MyBookings";
 import Terms from "./pages/Terms";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/details/:id" element={<Details />} />
         <Route path="/login" element={<Login />} />
         <Route path="/my-bookings" element={<MyBookings />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </HashRouter>
   );
