@@ -11,14 +11,21 @@ nav {
   color: white;
   padding: 15px 40px;
   display: flex;
-  justify-content: space-between;
   font-size: 20px;
+  flex-wrap: nowrap;
+justify-content: end;
 }
 
 nav a {
   color: white;
-  margin: 0 10px;
+  margin: 0 50px;
   text-decoration: none;
+  
+}
+nav h1{
+  color: aliceblue;
+  font-size: 23px;
+  margin-right: 40%;
 }
 
 /* HERO */
@@ -34,7 +41,7 @@ nav a {
   background: rgba(0,0,0,0.6);
   padding: 40px;
   color: rgb(236, 232, 232);
-  font-size: 60px;
+  font-size: 40px;
   text-align: center;
 }
 

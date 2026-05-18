@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./VehicleCard.css";
 
 function VehicleCard({ vehicle }) {
   const navigate = useNavigate();
@@ -7,13 +8,16 @@ function VehicleCard({ vehicle }) {
 
   return (
     <div className="card">
-      <img src={vehicle.image} />
-      <h3>{vehicle.name}</h3>
-      <p>₹{vehicle.price}</p>
+      <img src={vehicle.image} alt={vehicle.name} />
 
-      <button onClick={() => navigate(`/details/${vehicle.id}`)}>
-        Book
-      </button>
+      <div className="card-body">
+        <h3>{vehicle.name}</h3>
+        <p>₹{vehicle.price} / day</p>
+
+        <button onClick={() => navigate(`/details/${vehicle.id}`)}>
+          Book Now
+        </button>
+      </div>
     </div>
   );
 }
