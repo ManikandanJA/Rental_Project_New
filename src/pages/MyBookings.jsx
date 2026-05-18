@@ -1,5 +1,6 @@
 import { jsPDF } from "jspdf";
 
+import "./MyBookings.css";
 function MyBookings() {
   const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
 
