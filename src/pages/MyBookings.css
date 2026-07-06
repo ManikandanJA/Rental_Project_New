@@ -1,69 +1,78 @@
 .bookings {
-  padding: 40px;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #1f1c2c, hsl(250, 15%, 61%));
-  color: rgb(0, 0, 0);
+  padding: 40px 20px;
+  min-height: calc(100vh - 70px);
+  background: var(--bg);
+  color: var(--text);
 }
-.bookings p{
-  text-align: center;
-  font-style: italic;
-  color:red;
-  padding-top: 20px;
 
-}
 .bookings h2 {
   text-align: center;
-  margin-bottom: 10px;
-  font-size: 32px;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
+
+.bookings .empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding-top: 40px;
+  font-size: 16px;
 }
 
 .booking-card {
-  background: rgb(163, 47, 47);
-  color: black;
-  padding: 20px;
-  border-radius: 15px;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  transition: 0.3s;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 22px;
+  border-radius: 14px;
+  margin: 18px auto;
+  max-width: 550px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: 0.25s;
 }
 
 .booking-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  border-color: var(--accent);
 }
 
 .booking-card h3 {
   margin-bottom: 10px;
-  color: #333;
+  color: var(--accent);
 }
 
 .booking-card p {
   margin: 5px 0;
+  color: var(--text-muted);
 }
 
 .booking-card strong {
-  color: #555;
+  color: var(--text);
 }
 
 .booking-card button {
   margin-top: 15px;
-  padding: 10px 15px;
+  margin-right: 10px;
+  padding: 9px 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.booking-card button:first-of-type {
-  background: red;
-  color: white;
+.cancel-btn {
+  background: #d9463f;
+  color: #fff;
 }
 
-.booking-card button:last-of-type {
-  background: green;
-  color: white;
+.cancel-btn:hover {
+  background: #b8362f;
 }
 
-.booking-card button:hover {
-  opacity: 0.85;
+.pdf-btn {
+  background: #2ea16b;
+  color: #fff;
+}
+
+.pdf-btn:hover {
+  background: #24865a;
 }

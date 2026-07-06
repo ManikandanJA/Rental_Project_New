@@ -5,31 +5,45 @@ import "./Vehicles.css";
 
 function Vehicles() {
   const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
 
-  const filteredVehicles =
-    filter === "all"
-      ? vehicles
-      : vehicles.filter((v) => v.type === filter);
+  const filteredVehicles = vehicles
+    .filter((v) => (filter === "all" ? true : v.type === filter))
+    .filter((v) => v.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="vehicles-page">
-
       <h2>Available Vehicles</h2>
 
-      {/* 🔥 FILTER BUTTONS */}
+      <input
+        type="text"
+        className="search-box"
+        placeholder="Search by vehicle name..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
       <div className="filter-buttons">
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("car")}>Cars</button>
-        <button onClick={() => setFilter("bike")}>Bikes</button>
+        <button className={filter === "all" ? "active" : ""} onClick={() => setFilter("all")}>
+          All
+        </button>
+        <button className={filter === "car" ? "active" : ""} onClick={() => setFilter("car")}>
+          Cars
+        </button>
+        <button className={filter === "bike" ? "active" : ""} onClick={() => setFilter("bike")}>
+          Bikes
+        </button>
       </div>
 
-      {/* VEHICLES GRID */}
-      <div className="vehicles-grid">
-        {filteredVehicles.map((v) => (
-          <VehicleCard key={v.id} vehicle={v} />
-        ))}
-      </div>
-
+      {filteredVehicles.length === 0 ? (
+        <p className="no-results">No vehicles match your search.</p>
+      ) : (
+        <div className="vehicles-grid">
+          {filteredVehicles.map((v) => (
+            <VehicleCard key={v.id} vehicle={v} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

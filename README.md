@@ -1,16 +1,37 @@
-# React + Vite
+# RentalWHEELS 🚗🏍️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A vehicle rental booking app (Cars & Bikes) built with React + Vite + React Router.
 
-Currently, two official plugins are available:
+## Features
+- **Auth-gated booking flow** — Login (Name + Phone) required before browsing vehicles, viewing details, or booking. Session stored in `localStorage`.
+- **Home page** — hero banner, stats bar, and featured vehicles section.
+- **Vehicles listing** — search by name + filter by Car/Bike.
+- **Wishlist** — save/unsave vehicles with a heart toggle; dedicated Wishlist page.
+- **Booking (Details page)** — date validation (no past dates, end date must be after start date), auto-fills logged-in user's name & phone, live total price calculation.
+- **My Bookings** — view your bookings (scoped to logged-in phone number), cancel a booking, download a PDF receipt (via `jspdf`).
+- **404 page** for unknown routes.
+- **Dark UI theme** throughout, using CSS variables for consistent colors.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+React 19, Vite, React Router v7, jsPDF.
 
-## React Compiler
+## Run locally
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build
+```bash
+npm run build
+```
 
-## Expanding the ESLint configuration
+## Deploy (GitHub Pages)
+```bash
+npm run deploy
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Notes
+- Data (vehicles) is static, in `src/data/vehicles.jsx`.
+- Bookings and wishlist are stored in `localStorage` (no backend/database).
+- Login is a lightweight session (name + phone), not a real authentication system — good for a portfolio/demo project.
